@@ -1,10 +1,10 @@
 FROM centos
 
-RUN yum -y install httpd php php-mysql
+RUN yum -y install httpd php
 
 COPY html-ssl /var/www/html/
 
-RUN echo "<? phpinfo(); ?>" > /var/www/html/test.php
+RUN echo "<?php phpinfo(); ?>" > /var/www/html/test.php
 
 CMD apachectl -DFOREGROUND
 
