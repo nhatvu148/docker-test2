@@ -13,6 +13,8 @@
 * docker run -d -p 9090:80 apache_with_code:v5
 * docker build -t apache_with_code:v6 -f Dockerfile3 --build-arg user=nhatvu148 --build-arg httpd_package=httpd .
 * docker run -d -p 9090:80 apache_with_code:v6
+* docker build -t apache_ssl:v1 .
+* docker run -d -p 9090:80 apache_ssl:v1
 2. Nginx server:
 * docker build -t nginx_custom:v1 -f Dockerfile2 .
 * docker run -d -p 8080:80 nginx_custom:v1
