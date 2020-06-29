@@ -4,8 +4,10 @@ RUN yum -y install httpd unzip
 
 ENV HTML beginner-html-site-styled
 
-ADD https://github.com/mdn/$HTML/archive/gh-pages.zip /var/www/html/code.zip
+WORKDIR /var/www/html/
 
-RUN cd /var/www/html/ && unzip code.zip && mv /var/www/html/$HTML-gh-pages/* /var/www/html/ && echo $HTML > /var/www/html/env.html 
+ADD https://github.com/mdn/$HTML/archive/gh-pages.zip ./code.zip
+
+RUN unzip code.zip && mv $HTML-gh-pages/* . && echo $HTML > ./env.html 
 
 CMD apachectl -DFOREGROUND

@@ -6,6 +6,6 @@ ENV HTML beginner-html-site-styled
 
 ADD https://github.com/mdn/$HTML/archive/gh-pages.zip /var/www/html/code.zip
 
-RUN cd /var/www/html/ && unzip code.zip && mv /var/www/html/$HTML-gh-pages/* /var/www/html/ 
+RUN cd /var/www/html/ && unzip code.zip && mv /var/www/html/$HTML-gh-pages/* /var/www/html/ && echo $HTML > /var/www/html/env.html 
 
 CMD apachectl -DFOREGROUND
