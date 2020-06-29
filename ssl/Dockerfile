@@ -6,9 +6,9 @@ COPY html-ssl /var/www/html/
 
 RUN echo "<?php phpinfo(); ?>" > /var/www/html/test.php
 
-COPY server.crt /server.crt
+COPY localhost.crt /localhost.crt
 
-COPY server.key /server.key
+COPY localhost.key /localhost.key
 
 COPY ssl.conf /etc/httpd/conf.d/default.conf
 
