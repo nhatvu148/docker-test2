@@ -24,4 +24,8 @@ RUN rm -rf code.zip $HTML-gh-pages/
 
 USER root
 
-CMD apachectl -DFOREGROUND
+COPY cmd.sh /cmd.sh
+
+RUN chmod +x /cmd.sh
+
+CMD /cmd.sh

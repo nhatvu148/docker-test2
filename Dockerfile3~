@@ -2,7 +2,9 @@ FROM centos
 
 ARG user=nhatvu
 
-RUN yum -y install httpd unzip
+ARG httpd_package
+
+RUN yum -y install $httpd_package unzip
 
 LABEL maintainer="Nhat Vu"
 
@@ -22,4 +24,8 @@ RUN rm -rf code.zip $HTML-gh-pages/
 
 USER root
 
-CMD apachectl -DFOREGROUND
+COPY ./cmd.sh ./cmd.sh
+
+RUN chmod +x ./cmd.sh
+
+CMD ./cmd.sh
