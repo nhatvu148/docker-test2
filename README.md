@@ -18,3 +18,7 @@
 2. Nginx server:
 * docker build -t nginx_custom:v1 -f Dockerfile2 .
 * docker run -d -p 8080:80 nginx_custom:v1
+
+3. Postgres:
+* docker run -d --name postgres -e POSTGRES_PASSWORD=123456789 -e POSTGRES_USER=nhatvu -e POSTGRES_DB=nhatvu_db postgres
+* docker run -d --name jenkins -p 9090:8080 jenkins/jenkins
