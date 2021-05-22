@@ -22,3 +22,5 @@
 3. Postgres:
 * docker run -d --name postgres -e POSTGRES_PASSWORD=123456789 -e POSTGRES_USER=nhatvu -e POSTGRES_DB=nhatvu_db postgres
 * docker run -d --name jenkins -p 9090:8080 jenkins/jenkins
+
+## Start a process in foreground in order to keep docker container running
