@@ -24,3 +24,4 @@
 * docker run -d --name jenkins -p 9090:8080 jenkins/jenkins
 
 ## Start a process in foreground in order to keep docker container running
+## Use multistages with --from to reduce image size
